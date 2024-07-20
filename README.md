@@ -1,0 +1,39 @@
+# ShowFocusC 1.0 Help
+### 7/20/2024
+
+This program was originally written (judging by file dates in my zip archive) 
+on August 31, 2018, when I was only 16 years old. I had been frustrated
+with apps taking focus while I was playing games and decided to make an app
+that would log all of the programs that took focus.
+
+This program was thrown into The Archive™️, which is essentially the "I don't need 
+this program any more but I don't want to rewrite it if I ever need it again"
+folder in my backup system. It is precisely this reason that on July 20, 2024,
+at 8:30 AM, I have revisited this project - some window, probably Discord, is 
+stealing focus from VALORANT while I'm trying to play competitive games.
+
+This short fifty-line program aims to determine the thieving program by recording
+the name of the current focused window twenty times a second (unless it did not 
+change). I think this should be fine, but if you need it to be faster, you can
+adjust SFC_SLEEP_INTERVAL.
+
+Define Settings:
+- SFC_MIN_LENGTH      The minimum length a window's title must be to be shown
+- SFC_SLEEP_INTERVAL  The interval, in ms, to check for a new foreground window.
+- SFC_ENABLE_LOCALE   Set to 1 to enable locale shenanigannery
+- SFC_BUFFERLENGTH    The number of characters a window's title can be
+
+# Locale and Font Shenanigan Troubleshooting:
+
+If output is incorrect (mojibake or other), please run the program again with 
+your locale in the arguments (must be compiled with SFC_ENABLE_LOCALE = 1):
+
+`ShowFocusC.exe JA-jp`
+
+If characters are appearing as '?', check your console's font settings.
+
+In my experience, PowerShell seems to work best.
+
+It is entirely possible that changing the locale is not done correctly. I tried
+to implement it, but I don't actually have any other versions of Windows to 
+test on.
